@@ -9,6 +9,15 @@ body {
   color: white;
   background: #336A03; }
 
+.header > * {
+  margin: 16px; }
+
+a {
+  color: #FFFCD5;
+  text-decoration: none; }
+  a:hover {
+    color: #6AC77A; }
+
 img {
   vertical-align: middle;
   width: 50px;
@@ -40,3 +49,9 @@ table tr td {
   padding: 10px 10px;
   white-space: nowrap;
   overflow: hidden; }
+
+.sort-list {
+  color: #336A03;
+  cursor: pointer; }
+  .sort-list:hover {
+    color: #6AC77A; }

@@ -1,7 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-// import components here
 import Table from './components/Table';
 
 import './styles/reset.css';
@@ -14,6 +13,7 @@ export default class App extends React.Component {
       <div>
         <div className="header">
           <h2>Camper Leaderboard</h2>
+          <a href="https://github.com/LiviuLvu/camper-leaderboard">View Source Code</a>
         </div>
         <Table></Table>
       </div>

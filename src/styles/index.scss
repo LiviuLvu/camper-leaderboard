@@ -1,5 +1,6 @@
 $font-stack: Helvetica, Arial, sans-serif;
 $main-color: #333;
+$hover-text: #6AC77A;
 
 body {
   font-family: $font-stack;
@@ -12,6 +13,18 @@ body {
   text-align: center;
   color: white;
   background: #336A03;
+}
+
+.header > * {
+  margin: 16px;
+}
+
+a {
+  color: #FFFCD5;
+  text-decoration: none;
+  &:hover {
+    color: $hover-text;
+  }
 }
 
 img {
@@ -51,3 +64,10 @@ table tr td {
   overflow: hidden;
 }
 
+.sort-list {
+  color:#336A03;
+  cursor: pointer;
+  &:hover {
+    color: $hover-text;
+  }
+}
