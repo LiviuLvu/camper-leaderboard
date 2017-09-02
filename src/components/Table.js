@@ -9,7 +9,6 @@ export default class Table extends React.Component {
     super(props);
     this.state = {
       rowData: [],
-      rows: [],
       url: 'https://fcctop100.herokuapp.com/api/fccusers/top/recent'
     }
   }
@@ -21,7 +20,7 @@ export default class Table extends React.Component {
         rowData: response.data
       });
     })
-    .catch((error) => console.log(error));
+    .catch((error) => alert(error));
   }
 
   changeUrl(url) {
@@ -29,19 +28,22 @@ export default class Table extends React.Component {
   }
 
   componentDidMount() {
-    this.getTheData();
+    
   }
+  
+  render () {
+    this.getTheData();
+    let rowElements = [];
 
-  render () { 
-    this.state.rowData.forEach((item, i) => {
-      this.state.rows.push( <UserRow key={i} count={i+1} img={item.img} name={item.username} last30={item.recent} allTime={item.alltime}></UserRow> );
+    this.state.rowData.map((item, i) => {
+      return rowElements.push( <UserRow key={item.username} count={i+1} img={item.img} name={item.username} last30={item.recent} allTime={item.alltime}></UserRow> );
     });
 
     return (
       <table>
         <thead>
           <tr>
-            <th>#</th>
+            <th>Number</th>
             <th>Camper Name</th>
             <th className="sort-list" 
               onClick={() => this.changeUrl('https://fcctop100.herokuapp.com/api/fccusers/top/recent')}>
@@ -52,7 +54,7 @@ export default class Table extends React.Component {
           </tr>
         </thead>
         <tbody>
-          {this.state.rows}
+          {rowElements}
         </tbody>
       </table>
     );
