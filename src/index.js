@@ -13,7 +13,7 @@ export default class App extends React.Component {
       <div>
         <div className="header">
           <h2>Camper Leaderboard</h2>
-          <a href="https://github.com/LiviuLvu/camper-leaderboard">View Source Code</a>
+          <a href="https://github.com/LiviuLvu/camper-leaderboard">Source Code Link</a>
         </div>
         <Table></Table>
       </div>

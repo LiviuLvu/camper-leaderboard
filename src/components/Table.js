@@ -9,7 +9,8 @@ export default class Table extends React.Component {
     super(props);
     this.state = {
       rowData: [],
-      url: 'https://fcctop100.herokuapp.com/api/fccusers/top/recent'
+      url: 'https://fcctop100.herokuapp.com/api/fccusers/top/recent',
+      sortOption: 'last30'
     }
   }
 
@@ -23,15 +24,17 @@ export default class Table extends React.Component {
     .catch((error) => alert(error));
   }
 
-  changeUrl(url) {
-    this.setState({url: url});
+  changeUrl(url, sortOption) {
+    this.setState({
+      url: url,
+      sortOption: sortOption
+    });
   }
 
-  componentDidMount() {
-    
-  }
-  
   render () {
+    const recentUrl = 'https://fcctop100.herokuapp.com/api/fccusers/top/recent'; 
+    const alltimeUrl = 'https://fcctop100.herokuapp.com/api/fccusers/top/alltime'; 
+
     this.getTheData();
     let rowElements = [];
 
@@ -45,12 +48,17 @@ export default class Table extends React.Component {
           <tr>
             <th>Number</th>
             <th>Camper Name</th>
-            <th className="sort-list" 
-              onClick={() => this.changeUrl('https://fcctop100.herokuapp.com/api/fccusers/top/recent')}>
-              Points in past 30 days</th>
-            <th className="sort-list" 
-              onClick={() => this.changeUrl('https://fcctop100.herokuapp.com/api/fccusers/top/alltime')}>
-              All time points</th>
+            <th 
+              className={this.state.sortOption === 'last30' ? 'sort-list active' : 'sort-list inactive'}
+              onClick={() => this.changeUrl(recentUrl, 'last30')}>
+                Points in past 30 days
+            </th>
+
+            <th 
+              className={this.state.sortOption === 'alltime' ? 'sort-list active' : 'sort-list inactive'}
+              onClick={() => this.changeUrl(alltimeUrl, 'alltime')}>
+                All time points
+            </th>
           </tr>
         </thead>
         <tbody>

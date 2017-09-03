@@ -1,3 +1,9 @@
+@charset "UTF-8";
+.hover-text, a:hover, .sort-list:hover {
+  text-decoration: underline;
+  text-decoration-color: #C6C6C6;
+  color: #06a1cd; }
+
 body {
   font-family: Helvetica, Arial, sans-serif;
   font-weight: 100;
@@ -5,18 +11,14 @@ body {
 
 .header {
   padding: 20px 0px;
-  text-align: center;
-  color: white;
-  background: #336A03; }
+  text-align: center; }
 
 .header > * {
   margin: 16px; }
 
 a {
-  color: #FFFCD5;
+  color: #03536A;
   text-decoration: none; }
-  a:hover {
-    color: #6AC77A; }
 
 img {
   vertical-align: middle;
@@ -41,7 +43,9 @@ table tr th {
   font-weight: bold;
   text-align: left;
   margin: 0;
-  padding: 10px 10px; }
+  border-bottom: 6px solid #999999;
+  padding: 30px 10px;
+  color: #999999; }
 
 table tr td {
   text-align: left;
@@ -50,8 +54,14 @@ table tr td {
   white-space: nowrap;
   overflow: hidden; }
 
-.sort-list {
-  color: #336A03;
+.sort-list:hover {
   cursor: pointer; }
-  .sort-list:hover {
-    color: #6AC77A; }
+
+.active {
+  color: #03536A;
+  border-bottom: 6px solid #03536A; }
+  .active::after {
+    content: '▼'; }
+
+.inactive {
+  color: #03536A; }
