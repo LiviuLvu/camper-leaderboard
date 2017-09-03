@@ -9,4 +9,4 @@ User can toggle between sorting the list by how many brownie points they've earn
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
-View live app: [liviulvu.github.io/camper-leaderboard](https://liviulvu.github.io/camper-leaderboard)
+View live app: [liviulvu.github.io/camper-leaderboard](https://liviulvu.github.io/camper-leaderboard/)
